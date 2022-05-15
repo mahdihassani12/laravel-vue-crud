@@ -11,7 +11,8 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Detail</th>
-                    <!-- <th>Actions</th> -->
+                    <th>Image</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,11 @@
                     <td>{{ product.id }}</td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.detail }}</td>
+                    <td>
+                       <figure>
+                            <img :src="product.path + product.image" />      
+                       </figure>
+                    </td>
                     <td>
                         <div class="btn-group" role="group">
                             <router-link 
@@ -65,3 +71,10 @@
         }
     }
 </script>
+<style scope>
+    img{
+        width:200px;
+        height: auto;
+        object-fit:cover;
+    }
+</style>
